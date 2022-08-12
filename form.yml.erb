@@ -1,5 +1,5 @@
 ---
-cluster: "SLURM_CLUSTER"  
+cluster: "SLURM_CLUSTER" 
 attributes:
   bc_num_hours:
     value: 1
@@ -29,21 +29,28 @@ attributes:
       - [ "long", "long" ]
       - [ "interactive", "interactive" ]
       - [ "pascalnodes", "pascalnodes" ]
-      - [ "pascalnodes-medium", "pascalnodes-medium" ]
-      - [ "largemem", "largemem" ]
-      - [ "largemem-long", "largemem-long" ]
-      - [ "amd-hdr100", "amd-hdr100" ]
 
   version:
     widget: select
     label: "MATLAB version"
     help: "This defines the version of MATLAB you want to load."
     options:
-{% for ver in matlab_vers %}
-      - [ "{{ ver }}", "{{ matlab_module_name }}/{{ ver }}"]
-{% endfor %}
+      - [ "R2022a", "rc/matlab/R2022a"]
+      - [ "R2021b", "rc/matlab/R2021b"]
+      - [ "R2021a", "rc/matlab/R2021a"]
+      - [ "R2020a", "rc/matlab/R2020a"]
+      - [ "R2019b", "rc/matlab/R2019b"]
+      - [ "R2019a", "rc/matlab/R2019a"]
+      - [ "R2018a", "rc/matlab/R2018a"]
+      - [ "R2017b", "rc/matlab/R2017b"]
+      - [ "R2017a", "rc/matlab/R2017a"]
+      - [ "R2016b", "rc/matlab/R2016b"]
+      - [ "R2016a", "rc/matlab/R2016a"]
+      - [ "R2015a", "rc/matlab/R2015a"]
+      - [ "R2013a", "rc/matlab/R2013a"]
+      - [ "R2012a", "rc/matlab/R2012a"]
 
-  cuda_toolkit: "{{ cuda_toolkit_module }}"
+  cuda_toolkit: "cuda10.0/toolkit"
 
 form:
   - version
