@@ -30,6 +30,8 @@ module load <%= context.cuda_toolkit %>
 <%- end -%>
 # Load the required environment
 module load <%= context.version %>
+
+<%= context.custom_environment %>
 # Launch MATLAB
 module list
 set -x
